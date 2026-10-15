@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <title>Wedding Invitation</title>
+  <style>
+    :root { --paper:#f7f3eb; --ink:#27342d; --sage:#788a73; --gold:#b69a61; --muted:#6e7168; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Georgia,"Times New Roman",serif; }
+    .opening { position:fixed; inset:0; z-index:10; display:grid; place-items:center; padding:24px; background:var(--paper); transition:opacity .9s ease, visibility .9s ease; }
+    .opening.hide { opacity:0; visibility:hidden; pointer-events:none; }
+    .seal { text-align:center; max-width:440px; width:100%; animation:rise 1s ease both; }
+    .eyebrow { font: .72rem/1.6 Arial,sans-serif; text-transform:uppercase; letter-spacing:.25em; color:var(--sage); }
+    .seal h1 { font-size:clamp(2.5rem,9vw,4.8rem); font-weight:400; line-height:1.05; margin:20px 0; }
+    .rule { width:72px; height:1px; background:var(--gold); margin:22px auto; }
+    button { border:1px solid var(--sage); background:transparent; color:var(--ink); padding:13px 24px; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; font-size:.72rem; }
+    main { max-width:760px; margin:auto; padding:42px 22px 70px; text-align:center; }
+    .hero { min-height:74vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:48px 0; }
+    .monogram { width:86px; height:86px; border:1px solid var(--gold); border-radius:50%; display:grid; place-items:center; font-size:1.7rem; color:var(--sage); margin-bottom:30px; }
+    h2 { font-weight:400; font-size:clamp(2.6rem,8vw,5rem); line-height:1.05; margin:18px 0; }
+    .amp { color:var(--gold); font-style:italic; }
+    p { line-height:1.8; }
+    .intro { max-width:480px; color:var(--muted); }
+    section { padding:38px 0; border-top:1px solid #dfd7c8; }
+    section h3 { font-size:1.65rem; font-weight:400; margin:0 0 18px; }
+    .date { font-size:1.2rem; letter-spacing:.08em; }
+    .countdown { display:flex; justify-content:center; gap:clamp(12px,4vw,28px); margin:24px 0 8px; }
+    .countdown div { min-width:58px; }
+    .countdown strong { display:block; font-size:clamp(1.5rem,5vw,2.4rem); font-weight:400; }
+    .countdown span { font: .65rem Arial,sans-serif; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; }
+    .map-link { display:inline-block; margin-top:12px; color:var(--ink); border-bottom:1px solid var(--gold); padding-bottom:5px; text-decoration:none; }
+    footer { padding-top:28px; color:var(--muted); font-size:.9rem; }
+    @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <div class="opening" id="opening">
+    <div class="seal">
+      <div class="eyebrow">Together with their families</div>
+      <div class="rule"></div>
+      <h1>A day to<br>remember</h1>
+      <p class="intro">You are warmly invited to celebrate a beautiful beginning.</p>
+      <button id="openInvite">Open Invitation</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="hero">
+      <div class="monogram" id="monogram">A &amp; B</div>
+      <div class="eyebrow">Joyfully invite you to celebrate</div>
+      <h2><span id="brideName">Bride's Name</span><br><span class="amp">&amp;</span><br><span id="groomName">Groom's Name</span></h2>
+      <div class="rule"></div>
+      <p class="intro">With love and the blessings of our families, we invite you to join us as we begin our new chapter together.</p>
+    </div>
+
+    <section>
+      <div class="eyebrow">Save the date</div>
+      <h3 id="dateText">Friday, 30 October 2026</h3>
+      <p class="date" id="timeText">10:30 AM</p>
+      <div class="countdown" aria-label="Countdown to the wedding">
+        <div><strong id="days">--</strong><span>Days</span></div>
+        <div><strong id="hours">--</strong><span>Hours</span></div>
+        <div><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+      <p id="countdownNote" class="intro" style="margin:12px auto 0">We can't wait to celebrate with you.</p>
+    </section>
+
+    <section>
+      <div class="eyebrow">The celebration</div>
+      <h3 id="venueName">Wedding Venue</h3>
+      <p id="venueAddress" class="intro" style="margin:0 auto">Venue address, city</p>
+      <a class="map-link" id="mapLink" href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Open directions in Google Maps ↗</a>
+    </section>
+
+    <section>
+      <h3>With love,</h3>
+      <p id="familyText" class="intro" style="margin:0 auto">The families of the bride and groom</p>
+    </section>
+    <footer>Made with love · We look forward to celebrating with you</footer>
+  </main>
+
+  <script>
+    /*
+      EDIT THE DETAILS BELOW before publishing.
+      Use a 24-hour time in weddingDateTime, e.g. 2026-10-30T10:30:00+05:30.
+      For mapUrl, paste the full Google Maps share link.
+    */
+    const invitation = {
+      bride: "Bride's Name",
+      groom: "Groom's Name",
+      weddingDateTime: "2026-10-30T10:30:00+05:30",
+      displayDate: "Friday, 30 October 2026",
+      time: "10:30 AM",
+      venue: "Wedding Venue",
+      address: "Venue address, city",
+      mapUrl: "https://maps.google.com/",
+      family: "The families of the bride and groom"
+    };
+
+    document.title = invitation.bride + " & " + invitation.groom + " — Wedding Invitation";
+    document.getElementById("brideName").textContent = invitation.bride;
+    document.getElementById("groomName").textContent = invitation.groom;
+    document.getElementById("monogram").textContent =
+      (invitation.bride.trim()[0] || "A") + " & " + (invitation.groom.trim()[0] || "B");
+    document.getElementById("dateText").textContent = invitation.displayDate;
+    document.getElementById("timeText").textContent = invitation.time;
+    document.getElementById("venueName").textContent = invitation.venue;
+    document.getElementById("venueAddress").textContent = invitation.address;
+    document.getElementById("mapLink").href = invitation.mapUrl;
+    document.getElementById("familyText").textContent = invitation.family;
+
+    document.getElementById("openInvite").addEventListener("click", () => {
+      document.getElementById("opening").classList.add("hide");
+    });
+
+    const target = new Date(invitation.weddingDateTime).getTime();
+    function updateCountdown() {
+      const distance = target - Date.now();
+      if (distance <= 0) {
+        ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent = "0");
+        document.getElementById("countdownNote").textContent = "Today is the special day. Let the celebration begin!";
+        return;
+      }
+      document.getElementById("days").textContent = Math.floor(distance / 86400000);
+      document.getElementById("hours").textContent = Math.floor((distance % 86400000) / 3600000);
+      document.getElementById("minutes").textContent = Math.floor((distance % 3600000) / 60000);
+      document.getElementById("seconds").textContent = Math.floor((distance % 60000) / 1000);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
