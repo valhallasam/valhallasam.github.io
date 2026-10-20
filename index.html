@@ -1,44 +1,369 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f8f5ee">
-<meta name="description" content="Wedding invitation for Jafar Sayyed and Javeriya Tehseen, 30 October 2026.">
+<meta name="description" content="Wedding invitation for Javeriya Tehseen and Jafar Sayyed, 30 October 2026.">
 <title>Javeriya & Jafar — Wedding Invitation</title>
+
 <style>
-:root{--paper:#f8f5ee;--ink:#283a31;--sage:#7b8d78;--gold:#b08a4a;--line:#d8cdb9}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
-.opening{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:24px;text-align:center;background:var(--paper);transition:opacity .8s ease,visibility .8s ease}
-.opening.closed{opacity:0;visibility:hidden;pointer-events:none}.opening-card{max-width:440px;width:100%;padding:42px 24px;border:1px solid var(--line)}
-.eyebrow{letter-spacing:.22em;text-transform:uppercase;font:11px/1.6 Arial,sans-serif;color:var(--sage)}
-.opening h1{font-weight:normal;font-size:clamp(35px,8vw,54px);line-height:1.1;margin:20px 0}.opening p{color:#68766a;line-height:1.7}
-button,.button{border:1px solid var(--sage);background:var(--sage);color:white;padding:13px 22px;font:11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;display:inline-block;margin-top:14px}
-main{max-width:760px;margin:0 auto;padding:24px 18px 50px}.invitation{text-align:center;border:1px solid var(--line);padding:clamp(28px,7vw,66px) clamp(18px,6vw,54px)}
-.ornament{color:var(--gold);font-size:28px;letter-spacing:.3em;margin:8px 0 22px}h2{font-weight:normal;font-size:clamp(37px,9vw,68px);line-height:1.06;margin:22px 0}.amp{color:var(--gold);font-style:italic}
-.rule{width:72px;height:1px;background:var(--gold);margin:26px auto}.intro{max-width:440px;margin:0 auto;color:#5e6b60;line-height:1.9;font-size:16px}
-.date{font-size:clamp(20px,5vw,28px);letter-spacing:.08em;margin:16px 0 8px}.time{font:12px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--sage)}
-.countdown{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:28px auto 8px}.unit{min-width:68px;border:1px solid var(--line);padding:12px 8px}.number{display:block;font-size:25px}.unit small{font:9px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
-.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:18px;text-align:center}.detail{border:1px solid var(--line);padding:24px 16px}.detail h3{font-weight:normal;font-size:22px;margin:8px 0 12px}.detail p{color:#5e6b60;font:14px/1.8 Arial,sans-serif;margin:0}
-.footer{text-align:center;color:var(--sage);font:10px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-top:28px}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-</style></head>
+:root {
+  --paper: #f8f5ee;
+  --ink: #283a31;
+  --sage: #7b8d78;
+  --gold: #b08a4a;
+  --line: #d8cdb9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  background: var(--paper);
+  transition: opacity .8s ease, visibility .8s ease;
+}
+
+.opening.closed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-card {
+  max-width: 440px;
+  width: 100%;
+  padding: 42px 24px;
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font: 11px/1.6 Arial, sans-serif;
+  color: var(--sage);
+}
+
+.opening h1 {
+  font-weight: normal;
+  font-size: clamp(35px, 8vw, 54px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.opening p {
+  color: #68766a;
+  line-height: 1.7;
+}
+
+button, .button {
+  border: 1px solid var(--sage);
+  background: var(--sage);
+  color: white;
+  padding: 13px 22px;
+  font: 11px Arial, sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 14px;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 18px 50px;
+}
+
+.invitation {
+  text-align: center;
+  border: 1px solid var(--line);
+  padding: clamp(28px, 7vw, 66px)
+           clamp(18px, 6vw, 54px);
+}
+
+.ornament {
+  color: var(--gold);
+  font-size: 28px;
+  letter-spacing: .3em;
+  margin: 8px 0 22px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: clamp(37px, 9vw, 68px);
+  line-height: 1.06;
+  margin: 22px 0;
+}
+
+.amp {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.rule {
+  width: 72px;
+  height: 1px;
+  background: var(--gold);
+  margin: 26px auto;
+}
+
+.intro {
+  max-width: 440px;
+  margin: 0 auto;
+  color: #5e6b60;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.date {
+  font-size: clamp(20px, 5vw, 28px);
+  letter-spacing: .08em;
+  margin: 16px 0 8px;
+}
+
+.time {
+  font: 12px Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px auto 8px;
+}
+
+.unit {
+  min-width: 68px;
+  border: 1px solid var(--line);
+  padding: 12px 8px;
+}
+
+.number {
+  display: block;
+  font-size: 25px;
+}
+
+.unit small {
+  font: 9px Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.detail {
+  border: 1px solid var(--line);
+  padding: 24px 16px;
+}
+
+.detail h3 {
+  font-weight: normal;
+  font-size: 22px;
+  margin: 8px 0 12px;
+}
+
+.detail p {
+  color: #5e6b60;
+  font: 14px/1.8 Arial, sans-serif;
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  color: var(--sage);
+  font: 10px Arial, sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-top: 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
 <body>
-<section class="opening" id="opening"><div class="opening-card"><div class="eyebrow">Together with their families</div><div class="ornament">✦ ❦ ✦</div><h1>Jafar <span class="amp">&</span><br>Javeriya</h1><p>Invite you to celebrate their wedding</p><button id="openButton" type="button">Open Invitation</button></div></section>
-<main><section class="invitation"><div class="eyebrow">A celebration of love</div><div class="ornament">✦ ❦ ✦</div>
-<p class="intro">With the blessings of our families, we joyfully invite you to join us as we celebrate the wedding of</p>
-<h2>Jafar<br><span class="amp">&</span><br>Javeriya</h2><div class="rule"></div><div class="eyebrow">Friday</div>
-<div class="date">30 · October · 2026</div><div class="time">11:45 AM</div>
-<div class="countdown" aria-label="Countdown to the wedding"><div class="unit"><span class="number" id="days">--</span><small>Days</small></div><div class="unit"><span class="number" id="hours">--</span><small>Hours</small></div><div class="unit"><span class="number" id="minutes">--</span><small>Minutes</small></div><div class="unit"><span class="number" id="seconds">--</span><small>Seconds</small></div></div>
-<div class="rule"></div><p class="intro">Your presence and blessings will make our celebration even more special.</p>
-<div class="details"><div class="detail"><div class="eyebrow">The venue</div><h3>Umar Function Hall</h3><p>Aravind Nagar, next to Bus Depot<br>Hospete</p><a class="button" href="https://www.google.com/maps/search/?api=1&query=Umar%20Function%20Hall%2C%20Aravind%20Nagar%20Next%20to%20Bus%20Depot%2C%20Hospete" target="_blank" rel="noopener noreferrer">Get Directions</a></div>
-<div class="detail"><div class="eyebrow">The occasion</div><h3>Wedding Ceremony</h3><p>Friday, 30 October 2026<br>At 11:45 AM</p></div></div><div class="footer">With love · We look forward to seeing you</div></section></main>
+
+<!-- Opening screen -->
+<section class="opening" id="opening">
+  <div class="opening-card">
+    <div class="eyebrow">Together with their families</div>
+    <div class="ornament">✦ ❦ ✦</div>
+
+    <h1>
+      Javeriya <span class="amp">&</span><br>
+      Jafar
+    </h1>
+
+    <p>Invite you to celebrate their wedding</p>
+
+    <button id="openButton" type="button">
+      Open Invitation
+    </button>
+  </div>
+</section>
+
+<!-- Main invitation -->
+<main>
+  <section class="invitation">
+
+    <div class="eyebrow">A celebration of love</div>
+    <div class="ornament">✦ ❦ ✦</div>
+
+    <p class="intro">
+      With the blessings of our families, we joyfully invite
+      you to join us as we celebrate the wedding of
+    </p>
+
+    <h2>
+      Javeriya<br>
+      <span class="amp">&</span><br>
+      Jafar
+    </h2>
+
+    <div class="rule"></div>
+
+    <div class="eyebrow">Friday</div>
+    <div class="date">30 · October · 2026</div>
+    <div class="time">11:45 AM</div>
+
+    <!-- Countdown -->
+    <div class="countdown" aria-label="Countdown to the wedding">
+      <div class="unit">
+        <span class="number" id="days">--</span>
+        <small>Days</small>
+      </div>
+
+      <div class="unit">
+        <span class="number" id="hours">--</span>
+        <small>Hours</small>
+      </div>
+
+      <div class="unit">
+        <span class="number" id="minutes">--</span>
+        <small>Minutes</small>
+      </div>
+
+      <div class="unit">
+        <span class="number" id="seconds">--</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <p class="intro">
+      Your presence and blessings will make our celebration
+      even more special.
+    </p>
+
+    <!-- Venue details -->
+    <div class="details">
+
+      <div class="detail">
+        <div class="eyebrow">The venue</div>
+        <h3>Umar Function Hall</h3>
+
+        <p>
+          Aravind Nagar, next to Bus Depot<br>
+          Hospete
+        </p>
+
+        <a
+          class="button"
+          href="https://www.google.com/maps/search/?api=1&query=Umar%20Function%20Hall%2C%20Aravind%20Nagar%20Next%20to%20Bus%20Depot%2C%20Hospete"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get Directions
+        </a>
+      </div>
+
+      <div class="detail">
+        <div class="eyebrow">The occasion</div>
+        <h3>Wedding Ceremony</h3>
+
+        <p>
+          Friday, 30 October 2026<br>
+          At 11:45 AM
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      With love · We look forward to seeing you
+    </div>
+
+  </section>
+</main>
+
 <script>
-const weddingDate=new Date("2026-10-30T11:45:00+05:30");
-document.getElementById("openButton").addEventListener("click",()=>document.getElementById("opening").classList.add("closed"));
-function updateCountdown(){let diff=weddingDate.getTime()-Date.now();if(diff<=0){["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="0");return}
-document.getElementById("days").textContent=Math.floor(diff/86400000);
-document.getElementById("hours").textContent=Math.floor(diff%86400000/3600000);
-document.getElementById("minutes").textContent=Math.floor(diff%3600000/60000);
-document.getElementById("seconds").textContent=Math.floor(diff%60000/1000)}
-updateCountdown();setInterval(updateCountdown,1000);
-</script></body></html>
+const weddingDate = new Date("2026-10-30T11:45:00+05:30");
+
+document.getElementById("openButton").addEventListener("click", () => {
+  document.getElementById("opening").classList.add("closed");
+});
+
+function updateCountdown() {
+  let diff = weddingDate.getTime() - Date.now();
+
+  if (diff <= 0) {
+    ["days", "hours", "minutes", "seconds"].forEach(id => {
+      document.getElementById(id).textContent = "0";
+    });
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(diff / 86400000);
+
+  document.getElementById("hours").textContent =
+    Math.floor((diff % 86400000) / 3600000);
+
+  document.getElementById("minutes").textContent =
+    Math.floor((diff % 3600000) / 60000);
+
+  document.getElementById("seconds").textContent =
+    Math.floor((diff % 60000) / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
